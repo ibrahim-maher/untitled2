@@ -5,6 +5,7 @@ import 'articles.dart';
 import 'componants/circular_progress.dart';
 import 'componants/drawer.dart';
 import 'componants/mycard.dart';
+import 'componants/services_card.dart';
 import 'componants/subheader.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -114,33 +115,7 @@ class MyHomePage extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         itemCount: 5,
                         itemBuilder: (context, index) {
-                          return Card(
-                            child: Container(
-                              margin: const EdgeInsets.all(10),
-                              padding: const EdgeInsets.all(25),
-                              width: 100,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25.0),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.1),
-                                    // Shadow color
-                                    spreadRadius: 2,
-                                    // Spread radius
-                                    blurRadius: 2,
-                                    // Blur radius
-                                    offset: Offset(0, 1), // Of
-                                  ),
-                                ],
-                              ),
-                              child: Image.asset(
-                                "assets/icons/running.jpg",
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          );
+                          return servicesCard();
                         }),
                   ),
                 ],
@@ -154,3 +129,4 @@ class MyHomePage extends StatelessWidget {
         ));
   }
 }
+

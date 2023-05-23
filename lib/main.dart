@@ -11,7 +11,11 @@ import 'feedback.dart';
 import 'help.dart';
 import 'insuline_calculate.dart';
 import 'medication.dart';
+import 'ourservices.dart';
+import 'profile.dart';
 import 'reminder_time.dart';
+import 'report.dart';
+import 'search_page.dart';
 import 'type1.dart';
 
 void main() {
@@ -49,7 +53,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:  remindertime(),
+      home:  SearchPage(),
     );
   }
 }
