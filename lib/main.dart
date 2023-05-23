@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:untitled2/retinaPage.dart';
 
 import 'dashboard.dart';
 import 'diabetes_types.dart';
 import 'feedback.dart';
+import 'help.dart';
+import 'insuline_calculate.dart';
+import 'medication.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,7 +44,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:  FeedBack(),
+      home:  MedicationPage(),
     );
   }
 }
