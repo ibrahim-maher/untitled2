@@ -9,6 +9,7 @@ import 'dashboard.dart';
 import 'diabetes_types.dart';
 import 'feedback.dart';
 import 'help.dart';
+import 'home.dart';
 import 'insuline_calculate.dart';
 import 'medication.dart';
 import 'ourservices.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:  SearchPage(),
+      home:  MyHomePage(),
     );
   }
 }

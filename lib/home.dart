@@ -110,7 +110,7 @@ class MyHomePage extends StatelessWidget {
                     onPressed: () {},
                   ),
                   SizedBox(
-                    height: 100,
+                    height: 200,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 5,
