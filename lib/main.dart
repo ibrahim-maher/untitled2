@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled2/retinaPage.dart';
+import 'package:untitled2/up_ratina.dart';
 
 import 'add_medication.dart';
+import 'add_reminder.dart';
 import 'dashboard.dart';
 import 'diabetes_types.dart';
 import 'feedback.dart';
 import 'help.dart';
 import 'insuline_calculate.dart';
 import 'medication.dart';
+import 'reminder_time.dart';
+import 'type1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +49,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:  AddMedicationPage(),
+      home:  remindertime(),
     );
   }
 }
