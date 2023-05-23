@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled2/retinaPage.dart';
 
+import 'add_medication.dart';
 import 'dashboard.dart';
 import 'diabetes_types.dart';
 import 'feedback.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:  MedicationPage(),
+      home:  AddMedicationPage(),
     );
   }
 }
