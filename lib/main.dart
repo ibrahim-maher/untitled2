@@ -17,6 +17,8 @@ import 'profile.dart';
 import 'reminder_time.dart';
 import 'report.dart';
 import 'search_page.dart';
+import 'tell_us_about.dart';
+import 'tell_us_patient.dart';
 import 'type1.dart';
 
 void main() {
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home:  MyHomePage(),
+      home:  AddReminderPage(),
     );
   }
 }

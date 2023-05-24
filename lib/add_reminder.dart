@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'componants/def_button.dart';
 import 'componants/def_textfield.dart';
+import 'package:intl/intl.dart';
 
 class AddReminderPage extends StatefulWidget {
   const AddReminderPage({Key? key}) : super(key: key);
@@ -29,6 +30,7 @@ class _AddReminderPageState extends State<AddReminderPage> {
     },
   ];
 
+  TextEditingController dateController = TextEditingController();
   TextEditingController TimeController = TextEditingController();
   TextEditingController _medicationController = TextEditingController();
   TimeOfDay _selectedTime = TimeOfDay.now();
@@ -46,32 +48,6 @@ class _AddReminderPageState extends State<AddReminderPage> {
     super.dispose();
   }
 
-  DateTime selectedDate = DateTime.now();
-  TimeOfDay selectedTime = TimeOfDay.now();
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: selectedDate,
-      firstDate: DateTime(2020),
-      lastDate: DateTime(2025),
-    );
-    if (picked != null && picked != selectedDate)
-      setState(() {
-        selectedDate = picked;
-      });
-  }
-
-  Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay? picked = await showTimePicker(
-      context: context,
-      initialTime: selectedTime,
-    );
-    if (picked != null && picked != selectedTime)
-      setState(() {
-        selectedTime = picked;
-      });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -175,18 +151,56 @@ class _AddReminderPageState extends State<AddReminderPage> {
                             color: Colors.grey[200],
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: GestureDetector(
-                            onTap: () {
-                              _selectTime(context);
-                            },
-                            child: TextField(
-                              controller: TimeController,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText:
-                                    "Time : ${selectedTime.hour}:${selectedTime.minute}",
+                          child: TextField(
 
-                              ),
+                              readOnly: true,
+                            onTap: () {
+                              showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime.now(),
+                                lastDate: DateTime(2050),
+                              ).then((value) {
+                                dateController.text =
+                                    DateFormat.yMMMd().format(value!);
+                              });
+                            },
+
+                            controller: dateController,
+                            decoration: InputDecoration(
+                              hintText: "Date",
+                              border: InputBorder.none,
+
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: TextField(
+
+                            readOnly: true,
+                            onTap: () {
+                              showTimePicker(
+                                context: context,
+                                initialTime: TimeOfDay.now(),
+                              ).then((value) {
+                                TimeController.text =
+                                    value!.format(context).toString();
+                              });
+                            },
+
+                            controller: TimeController,
+                            decoration: InputDecoration(
+                              hintText: "time",
+                              border: InputBorder.none,
+
                             ),
                           ),
                         ),

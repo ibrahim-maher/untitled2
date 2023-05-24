@@ -88,7 +88,7 @@ class _TellUsPatientPageState extends State<TellUsPatientPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       def_textfield(
-                        hintText: "User Name",
+                        label: "User Name",
                       ),
                       const SizedBox(
                         height: 25,

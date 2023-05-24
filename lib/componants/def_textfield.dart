@@ -5,9 +5,9 @@ class def_textfield extends StatelessWidget {
   var hintText;
 
   Icon? icon;
-
-  String? label;
+  String? label ;
   Icon? prefixIcon;
+
 
   var controller;
   def_textfield({
@@ -39,7 +39,6 @@ class def_textfield extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         decoration: InputDecoration(
-
           label: Text(label!),
           hintText: hintText,
           suffixIcon: icon,
